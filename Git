@@ -1,0 +1,162 @@
+# Git Complete Guide
+
+## Introduction to Git
+Git (Global Information Tracker) is a **distributed version control system (DVCS)** that helps track changes in files, maintain multiple versions of a project, and collaborate efficiently.
+
+### Why Use Git?
+- **Tracks changes** in files and maintains history.
+- **Supports multiple versions** of the same file.
+- **Platform-independent** and **open-source**.
+- **Efficient handling** of large projects.
+- **Allows collaboration** among multiple developers.
+- **3rd generation VCS**, written in C (released in 2005).
+
+## Git vs Other VCS
+- **CVCS (Centralized Version Control System)**: Single central repository (e.g., SVN).
+- **DVCS (Distributed Version Control System)**: Multiple repositories, local and remote (e.g., Git).
+
+## Key Git Concepts
+### Repository (Repo)
+A **folder** that contains all your project files and their history.
+
+### Git Stages
+1. **Working Directory**: Where you write your source code.
+2. **Staging Area**: Where you prepare files before committing.
+3. **Repository**: Where committed files are stored.
+
+---
+
+## Installing and Configuring Git
+### Install Git
+```bash
+yum install git -y  # For Linux
+apt install git -y  # For Ubuntu
+brew install git     # For MacOS
+```
+### Check Git Version
+```bash
+git -v
+```
+### Configure Git User
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+```
+---
+
+## Git Workflow
+### 1. Initialize a Repository
+```bash
+git init  # Creates a local .git repository
+```
+### 2. Create a File and Add to Staging
+```bash
+touch index.html  # Create a file
+git add index.html  # Track file
+```
+### 3. Commit the File
+```bash
+git commit -m "Initial commit"
+```
+### 4. Check Status
+```bash
+git status  # Shows the current state of the working directory
+```
+### 5. View Commit History
+```bash
+git log  # Show commit history
+git log --oneline  # Show commit history in one line
+```
+---
+
+## Working with Branches
+### Creating and Switching Branches
+```bash
+git branch feature-branch  # Create a new branch
+git checkout feature-branch  # Switch to the branch
+git checkout -b new-branch  # Create and switch at the same time
+```
+### Renaming and Deleting Branches
+```bash
+git branch -m old-branch new-branch  # Rename branch
+git branch -D branch-name  # Delete a branch
+```
+### Merging Branches
+```bash
+git checkout main  # Switch to main branch
+git merge feature-branch  # Merge feature branch into main
+```
+---
+
+## Pushing Code to GitHub
+### 1. Connect Local Repository to Remote
+```bash
+git remote add origin https://github.com/your-username/repository.git
+```
+### 2. Push Code to GitHub
+```bash
+git push origin branch-name  # Push changes
+```
+### 3. Pull Code from GitHub
+```bash
+git pull origin branch-name  # Get the latest changes
+```
+---
+
+## Handling Merge Conflicts
+### When Conflicts Happen
+Conflicts arise when the same file is modified differently in two branches.
+
+### Steps to Resolve Merge Conflicts
+1. Open the conflicting file.
+2. Manually resolve the conflict.
+3. Add the resolved file.
+4. Commit the resolved changes.
+
+```bash
+git add conflicted-file.txt
+git commit -m "Resolved merge conflict"
+```
+---
+
+## Advanced Git Commands
+### Git Stash (Temporary Storage)
+```bash
+git stash  # Save uncommitted changes
+```
+### Apply Stashed Changes
+```bash
+git stash apply  # Restore last stashed changes
+git stash list  # View stash list
+git stash pop  # Apply and remove stash
+```
+### Git Cherry-Pick (Selectively Apply Commits)
+```bash
+git cherry-pick commit_id  # Apply a specific commit
+```
+### Git Revert (Undo a Commit)
+```bash
+git revert commit_id  # Creates a new commit that undoes changes
+```
+---
+
+## Git Ignore (Exclude Files from Tracking)
+Create a `.gitignore` file and add patterns to ignore files:
+```
+*.log
+node_modules/
+.env
+```
+---
+
+## Git Interview Questions
+1. What is Git and why is it used?
+2. Explain the stages of Git.
+3. What is the difference between Git Merge and Git Rebase?
+4. How to resolve merge conflicts?
+5. What is Git Stash and when is it used?
+6. Difference between Git Clone vs Git Pull?
+7. How to recover a deleted branch?
+
+This guide covers all essential Git concepts with examples. Happy Coding! 🚀
+
